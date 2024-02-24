@@ -1,0 +1,198 @@
+html, body {
+    overflow: hidden; /* Prevents scrolling in all directions */
+    width: 100%; /* Ensures the body doesn't extend beyond the viewport width */
+    height: 100%; /* Ensures the body doesn't extend beyond the viewport height */
+    margin: 0; /* Resets any default margin */
+    padding: 0; /* Resets any default padding */
+}
+
+body {
+    background-color: white;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.container {
+    width: calc(100% - 40px); /* Subtract 20px margin from both sides */
+    margin: 0 0 20px 0px;
+    position: relative;
+}
+
+.animate-text {
+    color: transparent;
+    -webkit-text-stroke: 0.3px black;
+    font-size: 10vw;
+    letter-spacing: 0.075em;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    width: 100%; 
+    margin: 0 0 40px 0;
+}
+
+.animate-text span {
+    color: transparent;
+    -webkit-text-stroke: 0.3px black;
+    position: relative;
+}
+
+.animate-text:hover span {
+    color: black;
+    -webkit-text-stroke: 0px;
+    text-shadow: none;
+}
+
+.hover-content {
+    display: none; /* Hidden initially */
+    position: fixed; /* Covers the entire viewport, ensuring the content is centered */
+    top: 0;
+    left: 80px;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent overlay */
+    z-index: 10; /* High enough to be above other content */
+    justify-content: left; /* Center horizontally in the viewport */
+    align-items: center; /* Center vertically in the viewport */
+    pointer-events: none; /* Allows interaction with elements underneath */
+}
+
+.hover-content div {
+    display: flex; /* Use Flexbox for the layout of the image and text */
+    align-items: flex-start; /* Aligns items to the top */
+    pointer-events: auto; /* Enables interaction within this area, if necessary */
+}
+
+.hover-content img {
+    max-width: 500px; /* Fixed width, or use percentage for responsiveness */
+    max-height: 80vh; /* Ensures the image is not taller than 80% of the viewport height */
+    pointer-events: none; /* Image does not capture clicks, allowing click-through */
+}
+
+.hover-content p {
+    color: black; /* Text color for visibility */
+    font-size: 1.5em; /* Adjust font size as needed */
+    margin-left: 20px; /* Space between the image and text */
+    pointer-events: none; /* Text does not capture clicks, allowing click-through */
+}
+
+
+
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 25px; /* Keeps the 20px padding on the sides */
+    display: flex;
+    justify-content: space-between; /* Keeps "Contact" to the right */
+    align-items: center;
+    background-color: transparent;
+}
+
+.bottom-nav .left-links {
+    display: flex;
+    gap: 10vw; /* Adjust this value as needed to control spacing between "Holes" and "About" */
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.75em;
+    letter-spacing: .085em;
+}
+
+.bottom-nav a:first-child {
+    margin-right: 0; /* Removes additional margin to the right of "Holes" if not needed */
+}
+
+.bottom-nav a:hover {
+    color: gray; /* Change color on hover */
+}
+
+.about-overlay, .contact-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 100%;
+    background-color: transparent;
+    color: black;
+    margin: 15px 20px;
+}
+
+.about-overlay p, .contact-overlay p {
+    margin: 0;
+    font-size: 1.75em;
+    letter-spacing: 0.085em;
+    -webkit-text-stroke: 0.5px black;
+    color:black;
+}
+
+
+
+
+/* Example media query for larger screens */
+@media (max-width: 1300px) {
+
+    .container {
+        margin: 0 0 20px 0px;
+    }
+    .animate-text {
+        font-size: 9vw; /* Larger relative increase for smaller viewports */    
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .container {
+        margin: 0 0 20px 0px;
+    }
+    .animate-text {
+        font-size: 4.5em; /* Larger relative increase for smaller viewports */    
+    }
+
+    .bottom-nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 1em;
+        letter-spacing: .08em;
+    }
+
+    .bottom-nav {
+        padding: 15px 20px; /* Keeps the 20px padding on the sides */
+    }
+
+    .about-overlay, .contact-overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 94%;
+        height: 100%;
+        background-color: transparent;
+        color: black;
+    }
+    
+    .about-overlay p, .contact-overlay p {
+        margin: 0;
+        font-size: 1.25em;
+        letter-spacing: 0.08em;
+        -webkit-text-stroke: 0.5px black;
+        color:black;
+    }
+    
+
+}
