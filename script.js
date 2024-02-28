@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex = (currentIndex + 1) % content.length;
     }
 
-    let animationInterval = setInterval(updateContent, 500);
+    let animationInterval = setInterval(updateContent, 700);
 
     // Pause the animation when hovering over the text container
     textContainer.addEventListener('mouseover', () => {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Resume the animation when the mouse leaves the text container
     textContainer.addEventListener('mouseout', () => {
-        animationInterval = setInterval(updateContent, 500);
+        animationInterval = setInterval(updateContent, 700);
     });
 
     
