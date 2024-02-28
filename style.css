@@ -151,6 +151,16 @@ text {
 
 @media (max-width: 600px) {
     .bottom-nav a {
-        font-size: 1.25em;
+        font-size: 1.2em;
+    }
+    text {
+        font-size: 11vw;
+    }
+    .text-container:hover .hover-content {
+        display: none;
+        opacity: 0; 
+    }
+    .text-container:hover tspan {
+        fill: none; 
     }
 }
