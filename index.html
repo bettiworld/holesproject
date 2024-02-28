@@ -6,19 +6,22 @@
     <title>Hole as Vessel</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.0/d3.min.js"></script>
 </head>
 <body>
-    <!-- <img src="hole-transparent.png" alt="Full Screen Background" id="fullscreen-bg"> -->
-
-    <div class="container">
-        <div id="text" class="animate-text">Hole as <span id="word">Vessel</span></div>
+    <div class="text-container">
+        <svg>
+            <text y="50%">Hole as <tspan id="word">vessel</tspan></text>
+        </svg>
+        <!-- Hover content is now a direct child of text-container -->
         <div id="hoverContent" class="hover-content">
             <div>
                 <img id="infoImage" src="gateway.png" alt="Gateway Image">
-                <p id="infoText">This is a gateway to new beginnings.</p>
+                <p id="infoText">A hole as a passage from one realm to another</p>
             </div>
         </div>
     </div>
+
     <div class="bottom-nav">
         <div class="left-links">
             <a href="#" id="holesLink">Holes</a>
@@ -26,16 +29,12 @@
         </div>
         <a href="#" id="contactLink">Contact</a>
     </div>
-
     <div class="about-overlay" id="aboutOverlay">
-        <p>Holes is a collective that gathers around non-knowledge; it is an aperture through which we renew our practices of assembly, of imagination, and care.</p>
+        <p>Holes is a collective...</p>
     </div>
-
     <div class="contact-overlay" id="contactOverlay">
         <p>Contact information goes here...</p>
     </div>
-
     <script src="script.js"></script>
-
 </body>
 </html>
